@@ -138,8 +138,8 @@ Investor-Risk-Tolerance-RoboAdvisor/
 │   ├── actual_vs_predicted_all_models.png
 │   └── feature_importance_xgboost.png
 ├── reports/
-│   ├── MLBD_Mini_Project_Report.docx       # Full Academic MLBD Mini Project Report (Word)
-│   ├── MLBD_Mini_Project_Report.pdf        # Full Academic MLBD Mini Project Report (PDF)
+│   ├── MLBD_Project_Report.docx            # Full Academic MLBD Project Report (Word - 5 Sections)
+│   ├── MLBD_Project_Report.pdf             # Full Academic MLBD Project Report (PDF - 5 Sections)
 │   ├── Investor_Risk_Tolerance_RoboAdvisor_Presentation.pptx # Presentation Slide Deck
 │   ├── model_comparison_benchmark.csv      # Complete benchmark metric results table
 │   └── eda_summary_statistics.csv          # Descriptive statistical summary table
@@ -176,8 +176,8 @@ Open your browser at `http://localhost:8501`.
 ---
 
 ## Deliverables Summary
-- **Word Project Report:** [`reports/MLBD_Mini_Project_Report.docx`](reports/MLBD_Mini_Project_Report.docx)
-- **PDF Project Report:** [`reports/MLBD_Mini_Project_Report.pdf`](reports/MLBD_Mini_Project_Report.pdf)
+- **Word Project Report:** [`reports/MLBD_Project_Report.docx`](reports/MLBD_Project_Report.docx)
+- **PDF Project Report:** [`reports/MLBD_Project_Report.pdf`](reports/MLBD_Project_Report.pdf)
 - **Presentation Deck:** [`reports/Investor_Risk_Tolerance_RoboAdvisor_Presentation.pptx`](reports/Investor_Risk_Tolerance_RoboAdvisor_Presentation.pptx)
 - **Viva Voce Defense Guide:** [`VIVA_PREPARATION_GUIDE.md`](VIVA_PREPARATION_GUIDE.md)
 
