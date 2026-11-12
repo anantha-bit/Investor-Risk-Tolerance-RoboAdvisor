@@ -38,7 +38,7 @@ def code_cell(code):
 cells_nb1 = [
     md_cell("""# 1. Data Acquisition & Preprocessing
 ## Project: Modeling Investor Risk Tolerance & Enabling an ML-Based Robo-Advisor
-**Course:** UE24AM320A — Capstone Project Phase - 1, PES University  
+**Course:** Machine Learning for Big Data (MLBD) — Mini Project, PES University  
 **Authors:** Ananthakrishna M A (PES1UG24AM036), Akash G K (PES1UG24AM022), Amar Patil (PES1UG24AM031), Chandraraj Patil (PES1UG24AM425)
 
 ---
@@ -79,7 +79,7 @@ create_notebook(cells_nb1, os.path.join(NOTEBOOKS_DIR, "01_Data_Acquisition_and_
 cells_nb2 = [
     md_cell("""# 2. Exploratory Data Analysis (EDA)
 ## Project: Modeling Investor Risk Tolerance & Enabling an ML-Based Robo-Advisor
-**Course:** UE24AM320A — Capstone Project Phase - 1, PES University  
+**Course:** Machine Learning for Big Data (MLBD) — Mini Project, PES University  
 **Authors:** Ananthakrishna M A (PES1UG24AM036), Akash G K (PES1UG24AM022), Amar Patil (PES1UG24AM031), Chandraraj Patil (PES1UG24AM425)
 
 ---
@@ -136,7 +136,7 @@ create_notebook(cells_nb2, os.path.join(NOTEBOOKS_DIR, "02_Exploratory_Data_Anal
 cells_nb3 = [
     md_cell("""# 3. Model Training & 5-Framework Benchmarking
 ## Project: Modeling Investor Risk Tolerance & Enabling an ML-Based Robo-Advisor
-**Course:** UE24AM320A — Capstone Project Phase - 1, PES University  
+**Course:** Machine Learning for Big Data (MLBD) — Mini Project, PES University  
 **Authors:** Ananthakrishna M A (PES1UG24AM036), Akash G K (PES1UG24AM022), Amar Patil (PES1UG24AM031), Chandraraj Patil (PES1UG24AM425)
 
 ---
@@ -185,7 +185,7 @@ create_notebook(cells_nb3, os.path.join(NOTEBOOKS_DIR, "03_Regression_Frameworks
 cells_nb4 = [
     md_cell("""# 4. Robo-Advisor Portfolio Allocation Engine
 ## Project: Modeling Investor Risk Tolerance & Enabling an ML-Based Robo-Advisor
-**Course:** UE24AM320A — Capstone Project Phase - 1, PES University  
+**Course:** Machine Learning for Big Data (MLBD) — Mini Project, PES University  
 **Authors:** Ananthakrishna M A (PES1UG24AM036), Akash G K (PES1UG24AM022), Amar Patil (PES1UG24AM031), Chandraraj Patil (PES1UG24AM425)
 
 ---
@@ -233,3 +233,4 @@ plt.tight_layout()
 plt.show()""")
 ]
 create_notebook(cells_nb4, os.path.join(NOTEBOOKS_DIR, "04_Robo_Advisor_Portfolio_Optimization.ipynb"))
+

@@ -1,6 +1,6 @@
 """
-Academic Capstone Phase-1 Report Generator
-Complies with PES University UE24AM320A Capstone Project Phase - 1 Report Guidelines:
+Academic MLBD Mini Project Report Generator
+Complies with PES University Report Guidelines:
 - A4 size, 2.0 cm margins on all sides
 - 1.5 line spacing, Times New Roman font
 - Chapter Title: 18 pt (centered, bold)
@@ -21,8 +21,8 @@ from docx.oxml import OxmlElement, parse_xml
 from docx.oxml.ns import nsdecls, qn
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DOCX_OUT = os.path.join(BASE_DIR, "reports", "UE24AM320A_Capstone_Phase1_Report.docx")
-PDF_OUT = os.path.join(BASE_DIR, "reports", "UE24AM320A_Capstone_Phase1_Report.pdf")
+DOCX_OUT = os.path.join(BASE_DIR, "reports", "MLBD_Mini_Project_Report.docx")
+PDF_OUT = os.path.join(BASE_DIR, "reports", "MLBD_Mini_Project_Report.pdf")
 VIZ_DIR = os.path.join(BASE_DIR, "visualizations")
 
 def set_cell_margins(cell, top=100, bottom=100, left=150, right=150):
@@ -128,7 +128,7 @@ def build_report():
     # =========================================================================
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = p.add_run("Dissertation on\n")
+    r = p.add_run("Project Report on\n")
     r.font.name = 'Times New Roman'
     r.font.size = Pt(14)
     
@@ -146,7 +146,7 @@ def build_report():
     r_deg.font.size = Pt(14)
     r_deg.bold = True
     
-    r_crs = p.add_run("UE24AM320A – Capstone Project Phase - 1\nPW26_ID07\n\nSubmitted by:\n")
+    r_crs = p.add_run("Machine Learning for Big Data (MLBD) — Mini Project\nPW26_ID07\n\nSubmitted by:\n")
     r_crs.font.name = 'Times New Roman'
     r_crs.font.size = Pt(12)
     
@@ -206,12 +206,12 @@ def build_report():
     r_ch.font.size = Pt(14)
     r_ch.bold = True
     
-    add_body_p(doc, "This is to certify that the dissertation entitled “Modeling Investor Risk Tolerance and Enabling a Machine Learning–Based Robo-Advisor” is a bonafide work carried out by Ananthakrishna M A (PES1UG24AM036), Akash G K (PES1UG24AM022), Amar Patil (PES1UG24AM031), and Chandraraj Patil (PES1UG24AM425) in partial fulfilment for the completion of Fifth-semester Capstone Project Phase - 1 (UE24AM320A) in the Program of Study — Bachelor of Technology in Computer Science and Engineering (AI & ML) under the rules and regulations of PES University, Bengaluru during the period August – December 2026. It is certified that all corrections/suggestions indicated for internal assessment have been incorporated in the report. The dissertation has been approved as it satisfies the 5th-semester academic requirements prescribed for the Capstone Project Phase - 1.")
+    add_body_p(doc, "This is to certify that the project report entitled “Modeling Investor Risk Tolerance and Enabling a Machine Learning–Based Robo-Advisor” is a bonafide work carried out by Ananthakrishna M A (PES1UG24AM036), Akash G K (PES1UG24AM022), Amar Patil (PES1UG24AM031), and Chandraraj Patil (PES1UG24AM425) in partial fulfilment for the completion of Fifth-semester Machine Learning for Big Data (MLBD) Mini Project in the Program of Study — Bachelor of Technology in Computer Science and Engineering (AI & ML) under the rules and regulations of PES University, Bengaluru during the period August – December 2026. It is certified that all corrections/suggestions indicated for internal assessment have been incorporated in the report. The project has been approved as it satisfies the 5th-semester academic requirements prescribed for the MLBD Mini Project.")
     
     p_sigs = doc.add_paragraph()
     p_sigs.paragraph_format.space_before = Pt(40)
     p_sigs.paragraph_format.line_spacing = 1.5
-    p_sigs.add_run("_____________________\t\t\t\t_____________________\nGuide Name & Signature\t\t\t\tChairperson, Dept of CSE (AI & ML)\nPES University, Bengaluru\t\t\tPES University, Bengaluru\n\n\n")
+    p_sigs.add_run("_____________________\t\t\t\t_____________________\nFaculty Guide / Course Instructor\t\t\tChairperson, Dept of CSE (AI & ML)\nPES University, Bengaluru\t\t\tPES University, Bengaluru\n\n\n")
     p_sigs.add_run("Name of the Examiners:\t\t\t\tSignatures with Date:\n1. ___________________\t\t\t\t1. ___________________\n2. ___________________\t\t\t\t2. ___________________")
     for r in p_sigs.runs:
         r.font.name = 'Times New Roman'
@@ -223,7 +223,7 @@ def build_report():
     # DECLARATION & ACKNOWLEDGEMENT
     # =========================================================================
     add_header_styled(doc, "DECLARATION", level=1)
-    add_body_p(doc, "We hereby declare that the Capstone Project Phase - 1 entitled “Modeling Investor Risk Tolerance and Enabling a Machine Learning–Based Robo-Advisor” has been carried out by us under the guidance of our Faculty Guide, Department of Computer Science and Engineering (AI & ML), and submitted in partial fulfilment of the course requirements for the award of the degree of Bachelor of Technology in Computer Science and Engineering (AI & ML) of PES University, Bengaluru during the academic semester August – December 2026. The matter embodied in this report has not been submitted to any other university or institution for the award of any degree or diploma.")
+    add_body_p(doc, "We hereby declare that the MLBD Mini Project entitled “Modeling Investor Risk Tolerance and Enabling a Machine Learning–Based Robo-Advisor” has been carried out by us under the guidance of our Faculty Guide, Department of Computer Science and Engineering (AI & ML), and submitted in partial fulfilment of the course requirements for the award of the degree of Bachelor of Technology in Computer Science and Engineering (AI & ML) of PES University, Bengaluru during the academic semester August – December 2026. The matter embodied in this report has not been submitted to any other university or institution for the award of any degree or diploma.")
     
     # Signature rows
     p_dec_sign = doc.add_paragraph()
@@ -239,8 +239,8 @@ def build_report():
         r.font.size = Pt(11)
         
     add_header_styled(doc, "ACKNOWLEDGEMENT", level=1)
-    add_body_p(doc, "We express our sincere gratitude to our Faculty Guide, Department of Computer Science and Engineering (AI & ML), PES University, for valuable mentorship, constructive critiques, and consistent encouragement throughout the conception, empirical analysis, and engineering execution of UE24AM320A Capstone Project Phase – 1.")
-    add_body_p(doc, "We extend our gratitude to Capstone Project Coordinator, Dr. Veena R S, for organizing and systematically guiding the evaluation phases. We also take this opportunity to thank Dr. Jayashree R, Professor & Chairperson, Department of Computer Science and Engineering (AI & ML), for providing world-class infrastructure and departmental resources. We also thank Dr. K S Sridhar, Dean of Faculty and Registrar, Dr. Suryaprasad J, Vice-Chancellor, and Prof. Jawahar Doreswamy, Chancellor, PES University, for fostering an academic environment dedicated to high-impact engineering innovation.")
+    add_body_p(doc, "We express our sincere gratitude to our Faculty Guide and Course Instructors, Department of Computer Science and Engineering (AI & ML), PES University, for valuable mentorship, constructive critiques, and consistent encouragement throughout the conception, empirical analysis, and engineering execution of the MLBD Mini Project.")
+    add_body_p(doc, "We extend our gratitude to the Course Coordinators for organizing and systematically guiding the project evaluation phases. We also take this opportunity to thank Dr. Jayashree R, Professor & Chairperson, Department of Computer Science and Engineering (AI & ML), for providing world-class infrastructure and departmental resources. We also thank Dr. K S Sridhar, Dean of Faculty and Registrar, Dr. Suryaprasad J, Vice-Chancellor, and Prof. Jawahar Doreswamy, Chancellor, PES University, for fostering an academic environment dedicated to high-impact engineering innovation.")
     
     doc.add_page_break()
     
@@ -249,7 +249,7 @@ def build_report():
     # =========================================================================
     add_header_styled(doc, "ABSTRACT", level=1)
     add_body_p(doc, "The quantification of an investor’s risk tolerance is the foundational cornerstone of asset allocation, capital preservation, and automated wealth advisory. Traditional wealth management firms rely heavily on subjective Risk Tolerance Questionnaires (RTQs). However, empirical behavioral finance reveals that static questionnaires suffer from profound psychological biases: investors routinely overstate risk appetite in bull markets and capitulate to irrational panic-selling during macroeconomic downturns. Furthermore, manual questionnaires preclude complete end-to-end automation of robo-advisory engines.")
-    add_body_p(doc, "This Capstone Phase-1 project develops a data-driven supervised machine learning framework to model an individual’s revealed 'true' risk tolerance using the Federal Reserve Board’s Survey of Consumer Finances (SCF) 2007–2009 longitudinal panel data. By tracking household balance sheets across the 2008 Great Financial Crisis, we isolate 'intelligent investors' whose asset allocations remained consistent across severe market shocks, creating an objective ground truth target variable.")
+    add_body_p(doc, "This MLBD Mini Project develops a data-driven supervised machine learning framework to model an individual’s revealed 'true' risk tolerance using the Federal Reserve Board’s Survey of Consumer Finances (SCF) 2007–2009 longitudinal panel data. By tracking household balance sheets across the 2008 Great Financial Crisis, we isolate 'intelligent investors' whose asset allocations remained consistent across severe market shocks, creating an objective ground truth target variable.")
     add_body_p(doc, "We conduct an exhaustive benchmark of five distinct machine learning paradigms: (1) XGBoost (Extreme Gradient Boosted Trees), (2) Keras (Deep Multi-Layer Perceptron with PyTorch backend), (3) PyTorch with FastAI (Tabular Learner with categorical embedding layers and One-Cycle scheduling), (4) PyTorch with TabNet (Sequential self-attentive tabular network), and (5) PyTorch Lightning (Structured modular deep regressor). The models are quantitatively evaluated on RMSE, MAE, R², MSE, Explained Variance, and inference latency, as well as qualitatively assessed on Simplicity, Transparency, and Efficacy. XGBoost attained superior performance with an R² of 0.9537, RMSE of 3.46, and sub-millisecond latency (0.20 ms). Finally, the calibrated model is integrated into an interactive, full-stack Python Robo-Advisor Dashboard that ingests demographic/financial inputs, predicts risk tolerance, dynamically calibrates quadratic risk aversion, solves Markowitz Mean-Variance portfolio optimization across selected S&P 500 equities, and displays backtested growth trajectories of a $100 initial investment.")
     add_body_p(doc, "Keywords: Robo-Advisor, Investor Risk Tolerance, Survey of Consumer Finances, Markowitz Modern Portfolio Theory, XGBoost, FastAI, TabNet, PyTorch Lightning, Behavioral Finance.", bold_prefix="Keywords: ")
     
@@ -301,9 +301,9 @@ def build_report():
         ("   8.2 Qualitative Evaluation: Simplicity, Transparency, Efficacy", "34"),
         ("   8.3 Feature Importance & Behavioral Drivers", "36"),
         ("   8.4 Portfolio Allocation & Backtested Trajectory Case Studies", "37"),
-        ("9. CONCLUSION OF PHASE - 1 AND FUTURE WORK", "39"),
-        ("   9.1 Summary of Phase - 1 Contributions", "39"),
-        ("   9.2 Phase - 2 Future Work Roadmap", "40"),
+        ("9. CONCLUSION AND FUTURE WORK", "39"),
+        ("   9.1 Summary of Project Contributions", "39"),
+        ("   9.2 Future Work Roadmap", "40"),
         ("REFERENCES / BIBLIOGRAPHY", "41"),
         ("APPENDIX A: DEFINITIONS, ACRONYMS, AND ABBREVIATIONS", "43")
     ]
@@ -335,7 +335,7 @@ def build_report():
     add_body_p(doc, "This project realizes Generation 3.0: bridging the gap between empirical econometric survey data and algorithmic portfolio optimization.")
     
     add_header_styled(doc, "1.3 Project Scope and Key Objectives", level=2)
-    add_body_p(doc, "The primary scope of Capstone Project Phase - 1 encompasses the following specific engineering and research milestones:")
+    add_body_p(doc, "The primary scope of the MLBD Mini Project encompasses the following specific engineering and research milestones:")
     add_bullet_p(doc, "Acquire and preprocess the Federal Reserve Board’s Survey of Consumer Finances (SCF) 2007–2009 panel dataset.", "Objective 1 (Econometric Data Processing): ")
     add_bullet_p(doc, "Formulate an empirical target variable ('TrueRiskTol') reflecting revealed asset allocation consistency across the 2008 financial shock.", "Objective 2 (Ground Truth Modeling): ")
     add_bullet_p(doc, "Perform rigorous Exploratory Data Analysis (EDA) uncovering non-linear demographic and behavioral drivers of risk taking.", "Objective 3 (Behavioral Feature Discovery): ")
@@ -605,17 +605,17 @@ def build_report():
     # =========================================================================
     # CHAPTER 9: CONCLUSION & FUTURE WORK
     # =========================================================================
-    add_header_styled(doc, "CHAPTER 9\nCONCLUSION OF CAPSTONE PROJECT PHASE – 1 AND FUTURE WORK", level=1)
+    add_header_styled(doc, "CHAPTER 9\nCONCLUSION AND FUTURE WORK", level=1)
     
-    add_header_styled(doc, "9.1 Summary of Phase - 1 Contributions", level=2)
-    add_body_p(doc, "In Capstone Project Phase - 1, we successfully designed, implemented, and verified an end-to-end machine learning robo-advisory system that replaces flawed subjective risk questionnaires with data-driven predictive modeling. Our key contributions comprise:")
+    add_header_styled(doc, "9.1 Summary of Project Contributions", level=2)
+    add_body_p(doc, "In this MLBD Mini Project, we successfully designed, implemented, and verified an end-to-end machine learning robo-advisory system that replaces flawed subjective risk questionnaires with data-driven predictive modeling. Our key contributions comprise:")
     add_bullet_p(doc, "Extracted and cleaned the Federal Reserve Board’s SCF 2007–2009 panel dataset, establishing an empirical revealed risk metric adjusted for the 2008 crash drawdown.", "Longitudinal Ground Truth: ")
     add_bullet_p(doc, "Conducted comprehensive EDA revealing that subjective willingness correlates weakly with revealed financial risk, proving that balance sheet capacity dominates self-perception.", "Behavioral Finance Validation: ")
     add_bullet_p(doc, "Benchmarked five distinct paradigms (XGBoost, Keras, FastAI, TabNet, Lightning). XGBoost demonstrated clear superiority on tabular data, achieving R² = 0.9537, RMSE = 3.46, and sub-millisecond inference.", "Empirical Architecture Benchmark: ")
     add_bullet_p(doc, "Engineered a production-ready Streamlit dashboard replicating Figure 5-6, seamlessly linking predicted risk scores to Markowitz MPT Mean-Variance asset allocation and historical backtest visualizations.", "Full-Stack Robo-Advisor UI: ")
 
-    add_header_styled(doc, "9.2 Phase - 2 Future Work Roadmap", level=2)
-    add_body_p(doc, "For Capstone Project Phase - 2, the team will extend this foundation through the following technical enhancements:")
+    add_header_styled(doc, "9.2 Future Work Roadmap", level=2)
+    add_body_p(doc, "For future extensions and engineering enhancements, the team will extend this foundation through the following technical avenues:")
     add_bullet_p(doc, "Incorporate Deep Q-Networks (DQN) and Proximal Policy Optimization (PPO) to learn dynamic, continuous portfolio rebalancing policies under non-stationary market regimes.", "1. Reinforcement Learning Portfolio Allocation: ")
     add_bullet_p(doc, "Expand from S&P 500 equities to global multi-asset universes incorporating commodities, sovereign bonds, real estate investment trusts (REITs), and crypto-assets.", "2. Multi-Asset Class Expansion: ")
     add_bullet_p(doc, "Incorporate Black-Litterman Bayesian portfolio optimization to blend market equilibrium with macroeconomic investor views, mitigating Mean-Variance sensitivity to estimation errors.", "3. Black-Litterman Allocation: ")
@@ -713,3 +713,4 @@ def build_report():
 
 if __name__ == "__main__":
     build_report()
+

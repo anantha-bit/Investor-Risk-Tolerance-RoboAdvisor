@@ -130,3 +130,4 @@ if __name__ == "__main__":
     print("Optimal Weights (RT=23.64):", res['weights'])
     print(f"Expected Return: {res['expected_annual_return']}% | Volatility: {res['annual_volatility']}% | Sharpe: {res['sharpe_ratio']}")
     print(res['growth_df'].tail())
+

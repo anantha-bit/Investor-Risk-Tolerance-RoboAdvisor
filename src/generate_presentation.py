@@ -1,6 +1,6 @@
 """
 Professional PowerPoint Presentation Generator
-Creates an academic and executive slide deck for Capstone Project Phase - 1
+Creates an academic and executive slide deck for MLBD Mini Project
 with clean typography, structured tables, visual callouts, and performance charts.
 """
 
@@ -37,7 +37,7 @@ def create_deck():
     prs.slide_height = Inches(7.5)
     blank_layout = prs.slide_layouts[6]
     
-    def add_slide_header(slide, title_text, category="UE24AM320A — CAPSTONE PROJECT PHASE - 1"):
+    def add_slide_header(slide, title_text, category="MLBD MINI PROJECT — PES UNIVERSITY"):
         # Header banner
         header_box = slide.shapes.add_textbox(Inches(0.8), Inches(0.4), Inches(11.7), Inches(1.1))
         tf = header_box.text_frame
@@ -106,7 +106,7 @@ def create_deck():
     p2.space_after = Pt(28)
     
     p3 = tf1.add_paragraph()
-    p3.text = "Project Id: 7 • Course: UE24AM320A (Capstone Project Phase - 1) • Aug – Dec 2026\n"
+    p3.text = "Project Id: 7 • Course: Machine Learning for Big Data (MLBD) Mini Project • Aug – Dec 2026\n"
     p3.text += "Project Team: Ananthakrishna M A (PES1UG24AM036) | Akash G K (PES1UG24AM022)\n"
     p3.text += "              Amar Patil (PES1UG24AM031)        | Chandraraj Patil (PES1UG24AM425)"
     p3.font.name = "Courier New"
@@ -551,10 +551,10 @@ def create_deck():
         r2.font.color.rgb = COLOR_DARK_TEXT
 
     # =========================================================================
-    # SLIDE 10: Phase-1 Conclusion & Phase-2 Roadmap
+    # SLIDE 10: Conclusion & Future Roadmap
     # =========================================================================
     slide10 = prs.slides.add_slide(blank_layout)
-    add_slide_header(slide10, "Conclusion of Phase - 1 and Phase - 2 Future Roadmap")
+    add_slide_header(slide10, "Conclusion and Future Roadmap")
     
     add_card(slide10, Inches(0.8), Inches(1.8), Inches(5.6), Inches(5.0))
     tb10_l = slide10.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(5.2), Inches(4.6))
@@ -562,7 +562,7 @@ def create_deck():
     tf10_l.word_wrap = True
     
     p = tf10_l.paragraphs[0]
-    p.text = "Phase - 1 Milestones Achieved"
+    p.text = "Key Project Milestones Achieved"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
     p.font.bold = True
@@ -593,7 +593,7 @@ def create_deck():
     tf10_r.word_wrap = True
     
     p = tf10_r.paragraphs[0]
-    p.text = "Phase - 2 Future Work Roadmap"
+    p.text = "Future Work Roadmap"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
     p.font.bold = True

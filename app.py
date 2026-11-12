@@ -225,8 +225,9 @@ with col2:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666666; font-size: 13px;'>
-    <b>PES University — Capstone Project Phase - 1 (UE24AM320A)</b><br>
+    <b>PES University — MLBD Mini Project</b><br>
     Team: Ananthakrishna M A (PES1UG24AM036) | Akash G K (PES1UG24AM022) | Amar Patil (PES1UG24AM031) | Chandraraj Patil (PES1UG24AM425)<br>
     Department of Computer Science and Engineering (AI & ML)
 </div>
 """, unsafe_allow_html=True)
+

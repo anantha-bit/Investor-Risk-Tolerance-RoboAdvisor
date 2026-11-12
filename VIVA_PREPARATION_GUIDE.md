@@ -1,6 +1,6 @@
 # Comprehensive Viva Voce Preparation Guide
 ## Project: Modeling Investor Risk Tolerance and Enabling a Machine Learning–Based Robo-Advisor
-**Course:** UE24AM320A — Capstone Project Phase - 1  
+**Course:** Machine Learning for Big Data (MLBD) — Mini Project  
 **Department:** Computer Science and Engineering (AI & ML), PES University, Bengaluru  
 **Team Members:**
 - **Ananthakrishna M A** (PES1UG24AM036)
@@ -179,14 +179,15 @@
 > **Answer:**  
 > Unconstrained Mean-Variance optimization can be solved analytically using Lagrange multipliers, but it routinely produces negative weights (short selling) and extreme leverage. Real retail robo-advisors operate under long-only bounds ($w_i \ge 0$) and full investment constraints ($\sum w_i = 1$). **Sequential Least Squares Programming (SLSQP)** handles these linear equality and inequality constraints efficiently in under 5 milliseconds.
 
-### Q: What are the main limitations of Phase - 1 and what will you do in Phase - 2?
+### Q: What are the main limitations of this project and what is the future scope?
 > **Answer:**  
-> **Limitations in Phase - 1:**
+> **Current Limitations:**
 > 1. Portfolio optimization uses historical returns as proxies for expected returns, which are prone to estimation error.
 > 2. Static rebalancing does not adapt dynamically to regime shifts (e.g. sudden interest rate spikes).
 > 
-> **Phase - 2 Roadmap:**
+> **Future Scope & Next Steps:**
 > 1. **Deep Reinforcement Learning (DQN/PPO):** Train autonomous agents for dynamic continuous rebalancing.
 > 2. **Black-Litterman Allocation:** Combine CAPM market equilibrium with subjective/macroeconomic views to produce stabilized weight vectors.
 > 3. **Automated Tax-Loss Harvesting:** Algorithmically harvest capital losses during downturns to offset investor tax liabilities.
 > 4. **Microservices Deployment:** Wrap the engine into a FastAPI backend with Docker and PostgreSQL.
+

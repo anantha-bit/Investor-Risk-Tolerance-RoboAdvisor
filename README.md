@@ -3,9 +3,9 @@
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Robo--Advisor-FF4B4B.svg)](app.py)
-[![PES University](https://img.shields.io/badge/PES%20University-UE24AM320A%20Capstone%20Phase--1-navy.svg)](reports/)
+[![PES University](https://img.shields.io/badge/PES%20University-MLBD%20Mini%20Project-navy.svg)](reports/)
 
-> **5th-Semester Capstone Project Phase - 1 (UE24AM320A)**  
+> **Machine Learning for Big Data (MLBD) — Mini Project**  
 > **Department of Computer Science and Engineering (AI & ML)**  
 > **Faculty of Engineering, PES University, Bengaluru**  
 > **Academic Period:** August – December 2026
@@ -138,8 +138,8 @@ Investor-Risk-Tolerance-RoboAdvisor/
 │   ├── actual_vs_predicted_all_models.png
 │   └── feature_importance_xgboost.png
 ├── reports/
-│   ├── UE24AM320A_Capstone_Phase1_Report.docx  # Full Academic Capstone Phase-1 Report (Word)
-│   ├── UE24AM320A_Capstone_Phase1_Report.pdf   # Full Academic Capstone Phase-1 Report (PDF)
+│   ├── MLBD_Mini_Project_Report.docx       # Full Academic MLBD Mini Project Report (Word)
+│   ├── MLBD_Mini_Project_Report.pdf        # Full Academic MLBD Mini Project Report (PDF)
 │   ├── Investor_Risk_Tolerance_RoboAdvisor_Presentation.pptx # Presentation Slide Deck
 │   ├── model_comparison_benchmark.csv      # Complete benchmark metric results table
 │   └── eda_summary_statistics.csv          # Descriptive statistical summary table
@@ -176,8 +176,8 @@ Open your browser at `http://localhost:8501`.
 ---
 
 ## Deliverables Summary
-- **Word Dissertation:** [`reports/UE24AM320A_Capstone_Phase1_Report.docx`](reports/UE24AM320A_Capstone_Phase1_Report.docx)
-- **PDF Dissertation:** [`reports/UE24AM320A_Capstone_Phase1_Report.pdf`](reports/UE24AM320A_Capstone_Phase1_Report.pdf)
+- **Word Project Report:** [`reports/MLBD_Mini_Project_Report.docx`](reports/MLBD_Mini_Project_Report.docx)
+- **PDF Project Report:** [`reports/MLBD_Mini_Project_Report.pdf`](reports/MLBD_Mini_Project_Report.pdf)
 - **Presentation Deck:** [`reports/Investor_Risk_Tolerance_RoboAdvisor_Presentation.pptx`](reports/Investor_Risk_Tolerance_RoboAdvisor_Presentation.pptx)
 - **Viva Voce Defense Guide:** [`VIVA_PREPARATION_GUIDE.md`](VIVA_PREPARATION_GUIDE.md)
 
@@ -185,3 +185,4 @@ Open your browser at `http://localhost:8501`.
 
 ## License
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
