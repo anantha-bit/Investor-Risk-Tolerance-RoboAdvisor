@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large binary spreadsheets (InputData.csv and SP500Data.csv are tracked)
+data/*.xlsx
+
+# Caches
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.tmp
