@@ -551,10 +551,10 @@ def create_deck():
         r2.font.color.rgb = COLOR_DARK_TEXT
 
     # =========================================================================
-    # SLIDE 10: Conclusion & Future Roadmap
+    # SLIDE 10: Conclusion & Key Takeaways
     # =========================================================================
     slide10 = prs.slides.add_slide(blank_layout)
-    add_slide_header(slide10, "Conclusion and Future Roadmap")
+    add_slide_header(slide10, "Project Conclusion & Key Takeaways")
     
     add_card(slide10, Inches(0.8), Inches(1.8), Inches(5.6), Inches(5.0))
     tb10_l = slide10.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(5.2), Inches(4.6))
@@ -593,28 +593,28 @@ def create_deck():
     tf10_r.word_wrap = True
     
     p = tf10_r.paragraphs[0]
-    p.text = "Future Work Roadmap"
+    p.text = "Core Conclusions & Impact"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
     p.font.bold = True
     p.font.color.rgb = COLOR_GOLD
     p.space_after = Pt(12)
     
-    p2_items = [
-        ("1. Deep Reinforcement Learning: ", "Deploy DQN / PPO agents for continuous rebalancing in non-stationary market regimes."),
-        ("2. Multi-Asset Class Expansion: ", "Incorporate global commodities, REITs, sovereign debt, and digital assets."),
-        ("3. Black-Litterman Bayesian MPT: ", "Blend market equilibrium with investor views to alleviate estimation error sensitivity."),
-        ("4. Automated Tax-Loss Harvesting: ", "Algorithmically harvest capital losses during downturns to maximize after-tax alpha."),
-        ("5. Cloud Microservices & REST API: ", "Containerize with Docker, FastAPI, and PostgreSQL for live brokerage deployment.")
+    conclusions = [
+        ("Objective Ground Truth: ", "Empirically revealed risk tolerance from crisis balance sheets eliminates investor overconfidence & panic selling."),
+        ("XGBoost Dominance: ", "Decisively outperformed neural networks (R² = 0.9537 vs 0.67–0.78), validating tree supremacy on tabular finance data."),
+        ("Closed-Loop Optimization: ", "Continuous risk scores dynamically calibrate quadratic risk aversion λ into Markowitz MPT in < 5 ms."),
+        ("Production-Grade Speed: ", "Sub-millisecond inference (0.20 ms) powers instantaneous risk scoring in live robo-advisory environments."),
+        ("End-to-End System: ", "Successfully delivered interactive Streamlit platform linking demographic survey profiling to live asset allocation.")
     ]
-    for p_t, p_b in p2_items:
+    for c_t, c_b in conclusions:
         p = tf10_r.add_paragraph()
         p.space_after = Pt(7)
-        r1 = add_run_text(p, p_t)
+        r1 = add_run_text(p, c_t)
         r1.font.bold = True
         r1.font.size = Pt(11.5)
         r1.font.color.rgb = COLOR_GOLD
-        r2 = add_run_text(p, p_b)
+        r2 = add_run_text(p, c_b)
         r2.font.size = Pt(11)
         r2.font.color.rgb = COLOR_WHITE
 
