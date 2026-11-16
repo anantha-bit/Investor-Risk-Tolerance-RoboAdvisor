@@ -9,11 +9,17 @@ Generates publication-quality visualizations and statistical tables analyzing:
 """
 
 import os
+import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from preprocess_scf import load_clean_data, CORE_FEATURE_COLUMNS, TARGET_COLUMN
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+try:
+    from src.preprocess_scf import load_clean_data, CORE_FEATURE_COLUMNS, TARGET_COLUMN
+except ImportError:
+    from preprocess_scf import load_clean_data, CORE_FEATURE_COLUMNS, TARGET_COLUMN
 
 sns.set_theme(style="whitegrid", font="sans-serif")
 plt.rcParams.update({
@@ -37,9 +43,10 @@ def run_full_eda():
     
     # 1. Summary Statistics Table
     print("[EDA] Generating summary statistics...")
-    stats = df.describe().T
-    stats['skewness'] = df.skew()
-    stats['kurtosis'] = df.kurtosis()
+    num_df = df.select_dtypes(include=[np.number])
+    stats = num_df.describe().T
+    stats['skewness'] = num_df.skew()
+    stats['kurtosis'] = num_df.kurtosis()
     stats_path = os.path.join(REPORT_DIR, "eda_summary_statistics.csv")
     stats.to_csv(stats_path)
     print(f"[SAVED] {stats_path}")
