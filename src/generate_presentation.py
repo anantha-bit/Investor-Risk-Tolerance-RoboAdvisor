@@ -595,5 +595,18 @@ def create_deck():
     prs.save(PPTX_OUT)
     print(f"[OK] Presentation saved successfully ({os.path.getsize(PPTX_OUT):,} bytes)")
 
+    # Also export PDF for direct web preview on GitHub
+    pdf_out = os.path.splitext(PPTX_OUT)[0] + ".pdf"
+    try:
+        import win32com.client
+        ppt_app = win32com.client.Dispatch("PowerPoint.Application")
+        deck = ppt_app.Presentations.Open(os.path.abspath(PPTX_OUT), ReadOnly=True, Untitled=False, WithWindow=False)
+        deck.SaveAs(os.path.abspath(pdf_out), 32)  # 32 = ppSaveAsPDF
+        deck.Close()
+        ppt_app.Quit()
+        print(f"[OK] Presentation PDF saved successfully ({os.path.getsize(pdf_out):,} bytes)")
+    except Exception as e:
+        print(f"[INFO] PDF export skipped: {e}")
+
 if __name__ == "__main__":
     create_deck()
