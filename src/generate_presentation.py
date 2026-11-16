@@ -420,10 +420,10 @@ def create_deck():
         r2.font.color.rgb = COLOR_DARK_TEXT
 
     # =========================================================================
-    # SLIDE 8: Markowitz Portfolio Optimization Engine
+    # SLIDE 8: Interactive Robo-Advisor Dashboard (Figure 5-6 Implementation)
     # =========================================================================
     slide8 = prs.slides.add_slide(blank_layout)
-    add_slide_header(slide8, "Modern Portfolio Theory: Dynamic Risk Aversion Mapping")
+    add_slide_header(slide8, "Robo-Advisor Dashboard (Streamlit Full-Stack UI)")
     
     add_card(slide8, Inches(0.8), Inches(1.8), Inches(5.6), Inches(5.0))
     tb8_l = slide8.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(5.2), Inches(4.6))
@@ -431,71 +431,6 @@ def create_deck():
     tf8_l.word_wrap = True
     
     p = tf8_l.paragraphs[0]
-    p.text = "Mathematical Formulation"
-    p.font.name = "Georgia"
-    p.font.size = Pt(18)
-    p.font.bold = True
-    p.font.color.rgb = COLOR_NAVY
-    p.space_after = Pt(12)
-    
-    math_text = [
-        ("Quadratic Utility Optimization:", "max_w  [ w^T μ - (λ / 2) w^T Σ w ]\nsubject to:  Σ w_i = 1.0  and  0 ≤ w_i ≤ 1.0"),
-        ("Dynamic Risk Aversion Mapping:", "λ(RT) = (100 - RT + 1) / 8.5\n• High RT (e.g. 80) -> Low λ (2.4) -> Aggressive equity weighting\n• Low RT (e.g. 10) -> High λ (10.7) -> Defensive capital preservation"),
-        ("Numerical Solver:", "Sequential Least Squares Programming (SLSQP) executes constrained quadratic optimization in < 5 ms.")
-    ]
-    for m_t, m_b in math_text:
-        p = tf8_l.add_paragraph()
-        p.space_after = Pt(10)
-        r1 = add_run_text(p, m_t + "\n")
-        r1.font.bold = True
-        r1.font.size = Pt(11.5)
-        r1.font.color.rgb = COLOR_BLUE
-        r2 = add_run_text(p, m_b)
-        r2.font.size = Pt(11)
-        r2.font.color.rgb = COLOR_DARK_TEXT
-
-    add_card(slide8, Inches(6.8), Inches(1.8), Inches(5.7), Inches(5.0))
-    tb8_r = slide8.shapes.add_textbox(Inches(7.0), Inches(2.0), Inches(5.3), Inches(4.6))
-    tf8_r = tb8_r.text_frame
-    tf8_r.word_wrap = True
-    
-    p = tf8_r.paragraphs[0]
-    p.text = "Portfolio Backtest & Telemetry"
-    p.font.name = "Georgia"
-    p.font.size = Pt(18)
-    p.font.bold = True
-    p.font.color.rgb = COLOR_NAVY
-    p.space_after = Pt(12)
-    
-    backtest_bullets = [
-        ("Historical Simulation: ", "Continuous daily rebalancing simulation of a $100 baseline investment across S&P 500 equities."),
-        ("Performance Metrics: ", "Calculates Annualized Expected Return (μ_ann), Annualized Volatility (σ_ann), and Sharpe Ratio (r_f = 2.0%)."),
-        ("Regime Robustness: ", "Dynamically re-weights assets according to cross-asset correlation matrix Σ, dampening idiosyncratic shock drawdowns."),
-        ("Empirical Case (RT = 23.64): ", "Allocated GOOGL: 20.8%, MSFT: 79.2%, yielding +51.5% total return over the 2-year testing window.")
-    ]
-    for bt_t, bt_b in backtest_bullets:
-        p = tf8_r.add_paragraph()
-        p.space_after = Pt(8)
-        r1 = add_run_text(p, bt_t)
-        r1.font.bold = True
-        r1.font.size = Pt(11.5)
-        r1.font.color.rgb = COLOR_NAVY
-        r2 = add_run_text(p, bt_b)
-        r2.font.size = Pt(11)
-        r2.font.color.rgb = COLOR_DARK_TEXT
-
-    # =========================================================================
-    # SLIDE 9: Interactive Robo-Advisor Dashboard (Figure 5-6 Implementation)
-    # =========================================================================
-    slide9 = prs.slides.add_slide(blank_layout)
-    add_slide_header(slide9, "Robo-Advisor Dashboard (Streamlit Full-Stack UI)")
-    
-    add_card(slide9, Inches(0.8), Inches(1.8), Inches(5.6), Inches(5.0))
-    tb9_l = slide9.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(5.2), Inches(4.6))
-    tf9_l = tb9_l.text_frame
-    tf9_l.word_wrap = True
-    
-    p = tf9_l.paragraphs[0]
     p.text = "Step 1: Investor Profiling"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
@@ -510,7 +445,7 @@ def create_deck():
         ("Action Trigger: ", "'CALCULATE RISK TOLERANCE' button queries champion XGBoost model in 0.20 ms, generating real-time score.")
     ]
     for s_t, s_b in s1_items:
-        p = tf9_l.add_paragraph()
+        p = tf8_l.add_paragraph()
         p.space_after = Pt(8)
         r1 = add_run_text(p, s_t)
         r1.font.bold = True
@@ -520,12 +455,12 @@ def create_deck():
         r2.font.size = Pt(11)
         r2.font.color.rgb = COLOR_DARK_TEXT
 
-    add_card(slide9, Inches(6.8), Inches(1.8), Inches(5.7), Inches(5.0))
-    tb9_r = slide9.shapes.add_textbox(Inches(7.0), Inches(2.0), Inches(5.3), Inches(4.6))
-    tf9_r = tb9_r.text_frame
-    tf9_r.word_wrap = True
+    add_card(slide8, Inches(6.8), Inches(1.8), Inches(5.7), Inches(5.0))
+    tb8_r = slide8.shapes.add_textbox(Inches(7.0), Inches(2.0), Inches(5.3), Inches(4.6))
+    tf8_r = tb8_r.text_frame
+    tf8_r.word_wrap = True
     
-    p = tf9_r.paragraphs[0]
+    p = tf8_r.paragraphs[0]
     p.text = "Step 2: Portfolio Optimization"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
@@ -540,7 +475,7 @@ def create_deck():
         ("Historical Backtest Curve: ", "Plots simulated daily trajectory of a $100 investment, displaying Expected Return, Volatility, and Sharpe Ratio.")
     ]
     for s_t, s_b in s2_items:
-        p = tf9_r.add_paragraph()
+        p = tf8_r.add_paragraph()
         p.space_after = Pt(8)
         r1 = add_run_text(p, s_t)
         r1.font.bold = True
@@ -551,17 +486,17 @@ def create_deck():
         r2.font.color.rgb = COLOR_DARK_TEXT
 
     # =========================================================================
-    # SLIDE 10: Conclusion & Key Takeaways
+    # SLIDE 9: Conclusion & Key Takeaways
     # =========================================================================
-    slide10 = prs.slides.add_slide(blank_layout)
-    add_slide_header(slide10, "Project Conclusion & Key Takeaways")
+    slide9 = prs.slides.add_slide(blank_layout)
+    add_slide_header(slide9, "Project Conclusion & Key Takeaways")
     
-    add_card(slide10, Inches(0.8), Inches(1.8), Inches(5.6), Inches(5.0))
-    tb10_l = slide10.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(5.2), Inches(4.6))
-    tf10_l = tb10_l.text_frame
-    tf10_l.word_wrap = True
+    add_card(slide9, Inches(0.8), Inches(1.8), Inches(5.6), Inches(5.0))
+    tb9_l = slide9.shapes.add_textbox(Inches(1.0), Inches(2.0), Inches(5.2), Inches(4.6))
+    tf9_l = tb9_l.text_frame
+    tf9_l.word_wrap = True
     
-    p = tf10_l.paragraphs[0]
+    p = tf9_l.paragraphs[0]
     p.text = "Key Project Milestones Achieved"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
@@ -577,7 +512,7 @@ def create_deck():
         ("Interactive Web Dashboard: ", "Delivered working Streamlit application replicating Figure 5-6.")
     ]
     for m_t, m_b in milestones:
-        p = tf10_l.add_paragraph()
+        p = tf9_l.add_paragraph()
         p.space_after = Pt(7)
         r1 = add_run_text(p, m_t)
         r1.font.bold = True
@@ -587,12 +522,12 @@ def create_deck():
         r2.font.size = Pt(11)
         r2.font.color.rgb = COLOR_DARK_TEXT
 
-    add_card(slide10, Inches(6.8), Inches(1.8), Inches(5.7), Inches(5.0), bg_color=COLOR_NAVY)
-    tb10_r = slide10.shapes.add_textbox(Inches(7.0), Inches(2.0), Inches(5.3), Inches(4.6))
-    tf10_r = tb10_r.text_frame
-    tf10_r.word_wrap = True
+    add_card(slide9, Inches(6.8), Inches(1.8), Inches(5.7), Inches(5.0), bg_color=COLOR_NAVY)
+    tb9_r = slide9.shapes.add_textbox(Inches(7.0), Inches(2.0), Inches(5.3), Inches(4.6))
+    tf9_r = tb9_r.text_frame
+    tf9_r.word_wrap = True
     
-    p = tf10_r.paragraphs[0]
+    p = tf9_r.paragraphs[0]
     p.text = "Core Conclusions & Impact"
     p.font.name = "Georgia"
     p.font.size = Pt(18)
@@ -608,7 +543,7 @@ def create_deck():
         ("End-to-End System: ", "Successfully delivered interactive Streamlit platform linking demographic survey profiling to live asset allocation.")
     ]
     for c_t, c_b in conclusions:
-        p = tf10_r.add_paragraph()
+        p = tf9_r.add_paragraph()
         p.space_after = Pt(7)
         r1 = add_run_text(p, c_t)
         r1.font.bold = True
@@ -619,19 +554,19 @@ def create_deck():
         r2.font.color.rgb = COLOR_WHITE
 
     # =========================================================================
-    # SLIDE 11: Viva Voce & Thank You
+    # SLIDE 10: Viva Voce & Thank You
     # =========================================================================
-    slide11 = prs.slides.add_slide(blank_layout)
-    bg11 = slide11.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(13.333), Inches(7.5))
-    bg11.fill.solid()
-    bg11.fill.fore_color.rgb = COLOR_NAVY
-    bg11.line.fill.background()
+    slide10 = prs.slides.add_slide(blank_layout)
+    bg10 = slide10.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(13.333), Inches(7.5))
+    bg10.fill.solid()
+    bg10.fill.fore_color.rgb = COLOR_NAVY
+    bg10.line.fill.background()
     
-    tb11 = slide11.shapes.add_textbox(Inches(1.5), Inches(1.8), Inches(10.3), Inches(4.0))
-    tf11 = tb11.text_frame
-    tf11.word_wrap = True
+    tb10 = slide10.shapes.add_textbox(Inches(1.5), Inches(1.8), Inches(10.3), Inches(4.0))
+    tf10 = tb10.text_frame
+    tf10.word_wrap = True
     
-    p = tf11.paragraphs[0]
+    p = tf10.paragraphs[0]
     p.alignment = PP_ALIGN.CENTER
     p.text = "Thank You"
     p.font.name = "Georgia"
@@ -640,7 +575,7 @@ def create_deck():
     p.font.color.rgb = COLOR_GOLD
     p.space_after = Pt(16)
     
-    p2 = tf11.add_paragraph()
+    p2 = tf10.add_paragraph()
     p2.alignment = PP_ALIGN.CENTER
     p2.text = "Questions & Answers (Viva Voce Defense)"
     p2.font.name = "Arial"
@@ -648,7 +583,7 @@ def create_deck():
     p2.font.color.rgb = COLOR_WHITE
     p2.space_after = Pt(24)
     
-    p3 = tf11.add_paragraph()
+    p3 = tf10.add_paragraph()
     p3.alignment = PP_ALIGN.CENTER
     p3.text = "GitHub Repository: https://github.com/anantha-bit/Investor-Risk-Tolerance-RoboAdvisor\n"
     p3.text += "Department of Computer Science and Engineering (AI & ML) • PES University"
